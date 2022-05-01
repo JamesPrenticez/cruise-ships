@@ -8,13 +8,11 @@ module.exports = {
   },
   mode: 'development',
   module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-    ]
+    rules: [{
+      test: /\.jsx?$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    }]
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -22,5 +20,5 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: './server/public'
-  },
+  }
 }
