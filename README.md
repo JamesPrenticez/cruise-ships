@@ -3,6 +3,7 @@
 ### Getting Started
 ``` npm i ```
 ``` npm run dev ```
+``` npm run db ```
 
 ### Database
 - ``` npx knex init ``` 

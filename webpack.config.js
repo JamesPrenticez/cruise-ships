@@ -1,12 +1,13 @@
 const path = require('path')
+let webpack = require('webpack'); 
 
 module.exports = {
-  entry: './client/index.js',
+  mode: 'development',
+  entry: ['webpack-hot-middleware/client?reload=true', './client/index.js'],
   output: {
     path: path.join(__dirname, 'server/public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
-  mode: 'development',
   module: {
     rules: [{
       test: /\.jsx?$/,
@@ -17,8 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: './server/public'
-  }
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 }
