@@ -17,7 +17,7 @@ server.use(require('webpack-hot-middleware')(compiler, {
 /* ---------------------------------------------------------------------------------------*/
 
 server.use(express.json())
-server.use(express.static(path.join(__dirname, './public/')))
+server.use(express.static(path.join(__dirname, './public')))
 
 module.exports = server
 

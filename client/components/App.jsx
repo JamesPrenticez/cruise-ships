@@ -2,10 +2,16 @@ import React from 'react'
 
 function App() {
   return (
-    <div className="app text-red-500">
-      <h1 style={{color: 'blue'}}>
+    <div>
+      <h1 className='text-7xl text-sky-500'>
         Cruise Ships of the World!
       </h1>
+      <img className='h-64 w-128'
+        src='images/default.png'
+      />
+      <div className='test'>
+
+      </div>
     </div>
   )
 }
