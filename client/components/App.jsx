@@ -7,7 +7,7 @@ function App() {
         Cruise Ships of the World!
       </h1>
       <img className='h-64 w-128'
-        src='images/default.png'
+        src='images/default.webp'
       />
       <div className='test'>
 
