@@ -1,5 +1,6 @@
 const path = require('path')
-let webpack = require('webpack'); 
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 
 module.exports = {
   mode: 'development',
@@ -9,16 +10,23 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    rules: [{
+    rules: [
+    {
       test: /\.jsx?$/,
       loader: 'babel-loader',
       exclude: /node_modules/
-    }]
+    },
+    {
+      test: /\.css$/i,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+    },
+  ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.css'],      
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({ template: path.join(__dirname, 'server/public/index.html')}),
   ],
 }
