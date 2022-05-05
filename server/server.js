@@ -3,8 +3,6 @@ const express = require('express')
 
 const server = express()
 
-const shipsRoute = require('./routes/ships')
-
 /* This is only required in development to allow for hot reloading - remove in production*/
 let webpack = require('webpack');
 let webpackConfig = require('../webpack.config.js')
@@ -22,4 +20,8 @@ server.use(express.static(path.join(__dirname, './public')))
 module.exports = server
 
 // Routes
+const shipsRoute = require('./routes/ships')
+const reviewsRoute = require('./routes/reviews')
+
 server.use('/', shipsRoute)
+server.use('/', reviewsRoute)

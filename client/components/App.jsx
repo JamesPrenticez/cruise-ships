@@ -1,15 +1,26 @@
 import React, {useState, useEffect} from 'react'
 import { getShips } from '../api/ships'
+import { getReviews } from '../api/reviews'
 
 function App() {
-const [ships, setShips] = useState([])
+  const [ships, setShips] = useState([])
+  const [reviews, setReviews] = useState([])
 
-useEffect(() => {
-  getShips()
+  useEffect(() => {
+    getShips()
+      .then((res) => {
+        setShips(res)
+      })
+  }, [])
+
+  const handleClickReviews = (id) => {
+    getReviews(id)
     .then((res) => {
-      setShips(res)
+      setReviews(res)
     })
-}, [])
+  }
+
+  console.log(reviews)
 
   return (
     <div>
@@ -20,6 +31,18 @@ useEffect(() => {
       {ships.map((ship) => (
         <div key={ship.id}>
           <h1>{ship.name}</h1>
+          <button 
+            className='h-12 w-24 bg-green-500'
+            onClick={() => handleClickReviews(ship.id)}
+          >
+            Reviews
+          </button>
+
+          {reviews.length > 0 && 
+            reviews.map((review) => (
+              <p>{review.content}</p>
+            ))
+          }
         </div>
       ))}
 
