@@ -3,6 +3,14 @@ exports.seed = (knex, Promise) => {
     {
       id: 1,
       name: "Symphony of the Seas",
+    },
+    {
+      id: 2,
+      name: "Marella Cruises",
+    },
+    {
+      id: 3,
+      name: "Cunard",
     }
   ])
 }

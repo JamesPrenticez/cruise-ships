@@ -9,3 +9,4 @@
 - ``` npx knex init ``` 
 - ``` npx knex migrate:make ships ``` 
 - ``` npx knex seed:make 01_ships ```
+- ``` npx knex migrate:latest ```
