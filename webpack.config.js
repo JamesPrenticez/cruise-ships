@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 
 module.exports = {
   mode: 'development',
@@ -23,10 +22,9 @@ module.exports = {
   ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],      
+    extensions: ['.js', '.jsx', '.css'],      
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({ template: path.join(__dirname, 'server/public/index.html')}),
   ],
 }

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { getShips } from '../api/ships'
 
 function App() {
+  console.log("here")
   return (
     <div>
       <h1 className='text-7xl text-sky-500'>
@@ -9,9 +11,6 @@ function App() {
       <img className='h-64 w-128'
         src='images/default.webp'
       />
-      <div className='test'>
-
-      </div>
     </div>
   )
 }
