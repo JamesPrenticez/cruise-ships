@@ -16,9 +16,8 @@ function getReviews(id, db = database) {
     .join('users', 'users.id', 'reviews.user_id')
     .join('ships', 'ships.id', 'reviews.ship_id')
     .where('reviews.ship_id', id)
-    .select('content', 'rating')
+    .select('first_name', 'last_name', 'content', 'rating') //would be good to send review_id 
     .then((result) => {
-        //console.log(result)
         return result
     })   
 }

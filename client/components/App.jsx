@@ -1,56 +1,25 @@
-import React, {useState, useEffect} from 'react'
-import { getShips } from '../api/ships'
-import { getReviews } from '../api/reviews'
+import React from 'react'
+import ShipList from './ShipList'
 
-function App() {
-  const [ships, setShips] = useState([])
-  const [reviews, setReviews] = useState([])
-
-  useEffect(() => {
-    getShips()
-      .then((res) => {
-        setShips(res)
-      })
-  }, [])
-
-  const handleClickReviews = (id) => {
-    getReviews(id)
-    .then((res) => {
-      setReviews(res)
-    })
-  }
-
-  console.log(reviews)
-
+export default function App() {
   return (
-    <div>
-      <h1 className='text-7xl text-sky-500'>
+    <div className="overflow-y-scroll">
+    <header className="flex">
+      <h1 className="text-sky-500 text-4xl">
         Cruise Ships of the World!
       </h1>
+      <nav>
+        <ul className="flex">
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+        </ul>
+      </nav>
+    </header>
 
-      {ships.map((ship) => (
-        <div key={ship.id}>
-          <h1>{ship.name}</h1>
-          <button 
-            className='h-12 w-24 bg-green-500'
-            onClick={() => handleClickReviews(ship.id)}
-          >
-            Reviews
-          </button>
-
-          {reviews.length > 0 && 
-            reviews.map((review) => (
-              <p>{review.content}</p>
-            ))
-          }
-        </div>
-      ))}
-
-      {/* <img className='h-64 w-128'
-        src='images/default.webp'
-      /> */}
-    </div>
+    <main className="">
+      <ShipList />
+    </main>
+  </div>
   )
 }
-
-export default App
