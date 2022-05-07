@@ -6,7 +6,7 @@ export default function App() {
     <div className="">
     <header className="flex">
       <h1 className="text-sky-500 text-4xl">
-        Cruise Ships of the World!
+        Cruise Ships of the World! 
       </h1>
       <nav>
         <ul className="flex">

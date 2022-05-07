@@ -8,7 +8,7 @@ export default function Ship({ship}) {
   const [reviewsData, setReviewsData] = useState([])
 
   useEffect(() => {
-    if(reviewsData .length > 0) return
+    if(reviewsData .length > 0) return //blocking 
     if(showReviews){
       setLoading(true)
       getReviews(ship.id)
@@ -19,7 +19,7 @@ export default function Ship({ship}) {
         setLoading(false)
       }, 1000);
     }
-    }, [showReviews])
+  }, [showReviews])
 
   return (
     <div>
@@ -30,12 +30,11 @@ export default function Ship({ship}) {
           <img className="w-full transition hover:scale-125 ease-in-out duration-1000 cursor-pointer" src="images/default.webp" alt="user profile picture" />
         </div>
 
-
         <button 
           className='bg-green-500 text-white rounded-md w-24 h-12'
           onClick={() => setShowReviews(!showReviews)}
         >
-          Reviews
+          Show Reviews
         </button>
 
         {showReviews && <Reviews reviewsData={reviewsData} loading={loading}/>}

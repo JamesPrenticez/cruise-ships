@@ -7,12 +7,12 @@
     @apply
     overflow-y-scroll
   }
+}
 
-
-  .test {
-      @apply
-      h-64 
-      w-64
-      bg-green-500
+@layer components {
+  .rob {
+    height: 100px;
+    width: 100px;
+    color: 'red';
   }
 }
