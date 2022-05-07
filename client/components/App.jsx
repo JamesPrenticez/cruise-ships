@@ -3,7 +3,7 @@ import ShipList from './ShipList'
 
 export default function App() {
   return (
-    <div className="overflow-y-scroll">
+    <div className="">
     <header className="flex">
       <h1 className="text-sky-500 text-4xl">
         Cruise Ships of the World!

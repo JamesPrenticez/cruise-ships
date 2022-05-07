@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Spinner() {
   return (
-    <h1 className='text-7xl'>Loading</h1>
+    <div className='flex items-center justify-center w-full'>
+      <img src="/assets/spinner.svg" alt="" />
+    </div>
   )
 }

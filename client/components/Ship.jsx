@@ -15,7 +15,9 @@ export default function Ship({ship}) {
         .then((res) => {
           setReviewsData(res)
       })
-      setLoading(false)
+      setTimeout(() => { //intentional delay so we can see the spinner
+        setLoading(false)
+      }, 1000);
     }
     }, [showReviews])
 
@@ -24,8 +26,8 @@ export default function Ship({ship}) {
       <div className='bg-gray-100 rounded-lg p-4 space-y-4'>
         <h1 className='text-xl font-bold'>{ship.name}</h1>
 
-        <div className='flex items-center w-full h-[250px] object-cover overflow-hidden'>
-          <img className="w-full transition hover:scale-125 ease-in-out cursor-pointer" src="images/default.webp" alt="user profile picture" />
+        <div className='flex items-center w-full h-[250px] object-cover overflow-hidden bg-black'>
+          <img className="w-full transition hover:scale-125 ease-in-out duration-1000 cursor-pointer" src="images/default.webp" alt="user profile picture" />
         </div>
 
 
