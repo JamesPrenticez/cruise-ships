@@ -15,7 +15,7 @@ export default function ShipList() {
 
   return (
   <Layout>
-    <div  className='grid grid-cols-3 gap-3'>
+    <div className='grid grid-cols-3 gap-3'>
       {ships.map((ship) => (
         <div key={ship.id}>
           <ShipItem ship={ship}/>

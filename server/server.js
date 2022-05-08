@@ -19,9 +19,14 @@ server.use(express.static(path.join(__dirname, './public')))
 
 module.exports = server
 
-// Routes
+// API Routes
 const shipsRoute = require('./routes/ships')
 const reviewsRoute = require('./routes/reviews')
 
 server.use('/', shipsRoute)
 server.use('/', reviewsRoute)
+
+// Client catch all to handle page reload
+server.get('*', function(req, res) {
+  res.sendFile('index.html', {root: path.join(__dirname, './public')});
+});
