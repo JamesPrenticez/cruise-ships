@@ -6,6 +6,7 @@ module.exports = {
   entry: ['webpack-hot-middleware/client?reload=true', './client/index.js'],
   output: {
     path: path.join(__dirname, 'server/public'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   module: {

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { getReviews } from '../api/reviews'
+
 import Reviews from './Reviews'
 
-export default function Ship({ship}) {
+export default function ShipItem({ship}) {
   const [loading, setLoading] = useState(null)
   const [showReviews, setShowReviews] = useState(false)
   const [reviewsData, setReviewsData] = useState([])
@@ -40,7 +41,6 @@ export default function Ship({ship}) {
         {showReviews && <Reviews reviewsData={reviewsData} loading={loading}/>}
 
       </div>
-    
     </div>
   )
 }

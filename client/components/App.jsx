@@ -1,25 +1,20 @@
 import React from 'react'
+import { BrowserRouter, Routes , Route} from "react-router-dom";
+
+import Home from './Home'
 import ShipList from './ShipList'
+import Glossary from './Glossary'
 
 export default function App() {
   return (
-    <div className="">
-    <header className="flex">
-      <h1 className="text-sky-500 text-4xl">
-        Cruise Ships of the World! 
-      </h1>
-      <nav>
-        <ul className="flex">
-          <li>one</li>
-          <li>two</li>
-          <li>three</li>
-        </ul>
-      </nav>
-    </header>
-
-    <main className="">
-      <ShipList />
-    </main>
-  </div>
+    <>
+      <BrowserRouter>
+        <Routes >
+          <Route exact path="/" element={<Home />} />
+          <Route path="/shipsList" element={<ShipList />} />
+          <Route exact path="/glossary" element={<Glossary />} />
+        </Routes >
+      </BrowserRouter>
+    </>
   )
 }
