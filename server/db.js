@@ -4,14 +4,23 @@ const database = require('knex')(config)
 
 module.exports = {
   getShips,
+  getShipById,
   getReviews,
 }
 
-function getShips(db = database) {
+function getShips(db = database){
   return db('ships')
+    .select('id', 'name')
 }
 
-function getReviews(id, db = database) {
+function getShipById(id, db = database){
+  return db('ships')
+    .where('ships.id', id)
+    .first()
+    .select('id', 'name')
+}
+
+function getReviews(id, db = database){
   return db('reviews')
     .join('users', 'users.id', 'reviews.user_id')
     .where('reviews.ship_id', id)

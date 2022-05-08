@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 export default function ShipItem({ship}) {
 
   return (
@@ -9,6 +10,10 @@ export default function ShipItem({ship}) {
         <div className='flex items-center w-full h-[250px] object-cover overflow-hidden bg-blue-900'>
           <img className="w-full transition hover:scale-125 ease-in-out duration-1000 cursor-pointer" src="images/default.webp" alt="user profile picture" />
         </div>
+
+        <p className='text-sm text-red-500'>
+          <Link to={`/ship/${ship.id}`}>See more</Link>
+        </p>
 
       </div>
     </div>

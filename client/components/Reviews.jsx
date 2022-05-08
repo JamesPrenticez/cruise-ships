@@ -1,10 +1,10 @@
 import React from 'react'
 import Spinner from './common/Spinner'
 
-export default function Reviews({loading, reviewsData}) {
+export default function Reviews({loadingReviews, reviewsData}) {
   return (
 <>
-  { loading ? 
+  { loadingReviews ? 
     <Spinner/> 
   :
     <ul className='space-y-3 divide-y'>
@@ -14,7 +14,7 @@ export default function Reviews({loading, reviewsData}) {
         className="bg-white rounded-sm p-4"
         >
           <div className='flex items-center space-x-4 pb-4'>
-            <img className="h-8 w-8 rounded-full" src="images/default.webp" alt="user profile picture" /> {/* review.img */}
+            <img className="h-8 w-8 rounded-full" src="/images/default.webp" alt="user profile picture" /> {/* review.img */}
             <p className="text-xl font-bold">{review.first_name} {review.last_name}</p>
           </div>
           <p>{review.content}</p>

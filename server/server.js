@@ -28,5 +28,5 @@ server.use('/', reviewsRoute)
 
 // Client catch all to handle page reload
 server.get('*', function(req, res) {
-  res.sendFile('index.html', {root: path.join(__dirname, './public')});
-});
+  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+})
