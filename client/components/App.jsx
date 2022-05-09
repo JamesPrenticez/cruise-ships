@@ -10,12 +10,12 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes >
-          <Route exact path="/" element={<Home />} />
-          <Route path="/shipsList" element={<ShipList />} />
-          <Route exact path="/ship/:id" element={<Ship />} />
-          <Route exact path="/glossary" element={<Glossary />} />
-        </Routes >
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/shipsList" element={<ShipList/>} />
+          <Route exact path="/ship/:id" element={<Ship/>} />
+          <Route exact path="/glossary" element={<Glossary/>} />
+        </Routes>
       </BrowserRouter>
     </>
   )

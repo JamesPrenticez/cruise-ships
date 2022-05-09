@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
+  devtool: "eval-cheap-source-map",
   entry: ['webpack-hot-middleware/client?reload=true', './client/index.js'],
   output: {
     path: path.join(__dirname, 'server/public'),

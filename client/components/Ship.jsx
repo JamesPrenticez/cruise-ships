@@ -17,8 +17,8 @@ export default function Ship() {
   const [reviewsData, setReviewsData] = useState([])
 
   const id = params.id
-  console.log(id)
-  console.log(shipData)
+  // console.log(id)
+  // console.log(shipData)
 
   //Get Ship
   useEffect(() => {

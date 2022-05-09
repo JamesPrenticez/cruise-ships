@@ -33,6 +33,8 @@ function Layout({children}) {
     <main className='pt-4'>
       {children}
     </main>
+    
+    <footer></footer>
 
     </div>
   </div>
