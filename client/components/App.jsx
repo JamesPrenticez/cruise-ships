@@ -7,7 +7,7 @@ function App()  {
     <>
     <BrowserRouter>
       <Routes>
-        {/* Put Routes here for Reviews Part */}
+        {/* Put Routes here for Cruise Lines Page */}
       </Routes>
     </BrowserRouter>
     </>
