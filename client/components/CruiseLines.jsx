@@ -1,5 +1,5 @@
 import React from 'react'
-import ShipShots from './ShipShots'
+// import ShipShots from './ShipShots'
 import CruiseListHeader from './CruiseListHeader'
 
 function CruiseLines()  {
@@ -10,7 +10,7 @@ function CruiseLines()  {
         </div>
 
         <div>
-            <ShipShots/>
+            {/* <ShipShots/> Comment this component, because I want to get CruiseListHeader working first  */}
             <CruiseListHeader/>
         </div>
         </>
