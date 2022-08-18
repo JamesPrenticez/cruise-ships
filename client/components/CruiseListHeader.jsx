@@ -13,11 +13,14 @@ function CruiseListHeader() {
     useEffect (() => {
         getCruiseLines()
           .then(res => {
-            setCruiseHeaders({
-              cruiseHeaders: res
-            })
+            // Comment this below as this may not be the correct way with hooks
+            // setCruiseHeaders({
+            //   cruiseHeaders: res
+            // })
+            // Use this below as I believe this is the correct way to do it with Hooks
+            setCruiseHeaders(res)
           });
-      }, []); // Make sure to also pass an array here, or you'll be triggering this effect on every render
+    }, []); // Make sure to also pass an array here, or you'll be triggering this effect on every render
 
     return  (
         <>
