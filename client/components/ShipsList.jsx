@@ -4,66 +4,35 @@ import {HashLink as Link} from 'react-router-hash-link'
 
 function ShipsList()    {
 
-    // Declare cruiseHeaders variable and set it using useState 
+    // Declare shipsList variable, set and initialize it as an empty array by using useState.
     const [shipsList, setShipsList] = useState([]);
-    // const [isOpen, handleClick] = useState((false));
-    // const [isOpen, shipsList] = useState((false));
-    // I think I only need to set isOpen to false for initial useState
-    // Set isOpen to false, because button is closed when user initially visits page
+    // Set isOpen initially to false, because button is closed when user initially visits Cruise Lines page.
     const [isOpen, setIsOpen] = useState(false);
-    // const [hasFetched, setShipsList] = useState((false));
-    // Set hasFetched initially to false, because no ship data is initially shown when user visits page.
+    // Set hasFetched initially to false, because no ship data is initially shown when user visits Cruise Lines page.
     const [hasFetched, setHasFetched] = useState(false);
 
     useEffect (() => {
         getShipsList(this.props.cruise_line)
-            .then(res =>  {
-                // Comment this below as this may not be the correct way with hooks
-                // setShipsList({
-                //     shipsList: res,
-                //     hasFetched: true
-                // }) this brackets for one without hooks
-                // Use this below as I believe this is the correct way to do it with Hooks    
+            .then(res =>  {   
                 setShipsList(res),
-                setHasFetched(true)              
+                setHasFetched(true) // It is not reading true for hasFetched in this useEffect
+                // so it is not calling setHasFetched function              
             });
-    }, []); // Make sure to also pass an array here, or you'll be triggering this effect on every render
+    }, []); // Make sure to also pass an array here, or I will be triggering this effect on every render
 
 
-    // function handleClick needs to bechanged, 
+    // function handleClick needs to be changed, 
     // so that it follows React Functional Component methods 
 
+    // This code suggested by Rob Cummins from Dev Academy Slack, I am currently using.
+    // This toggles isOpen between true and false
+    function handleClick()  {
+        setIsOpen(isOpen => !isOpen)
+    }    
 
-    function handleClick () {
-        // My first attempt based on empty array for shipsList
-        // if(useState([]))    {
-        // Should be based on no shipsList initially has not been Fetched yet, I think   
-        if(setHasFetched(false)) {
-            setShipsList()  }
-            useState(
-                setShipsList(previousshipsList => !previousshipsList),
-                setIsOpen(previousIsOpen => !previousIsOpen),
-                setHasFetched(previousHasFetched => !previousHasFetched)
-            )
-    }
-
-
-    // Comment all of this old handleClick Function, as it was used previously with my Class Component
-    // function handleClick () {
-    //This handleClick sorts out the changing of state between Shipslist being open or not, when a Cruise Line Heading is clicked.
-      //This if statement finds out if the shipsList has been visited and if it has, it uses hasFetched to find Ships for List.
-    //   if(!this.state.hasFetched)  {
-    //     this.setShipsList()
-    //   }
-      //This block of code below sorts out the toggling of the State for the Cruise Line Headings. 
-    //   this.setState(prevState =>  ({
-        //Code below will find previous state of Ships List when it is either open or closed.
-        // shipsList: prevState.shipsList,
-        //Code below will reverse the Previous State of isOpen for Ships List when it is open or closed.
-        // isOpen: !prevState.isOpen,
-        //Code below will find Previous State of hasFetched for Ships List when it is closed.
-    //     hasFetched: prevState.hasFetched
-    //   }))    
+    // Try this suggestion from Holloway on Javascript Slack Channel 
+    // function handleClick () {  
+    //     setIsOpen(previousIsOpen => !previousIsOpen); // this will invert the boolean value of isOpen.
     // }
 
     function findShipNames(ship)  {
