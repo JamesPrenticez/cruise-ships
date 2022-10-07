@@ -5,7 +5,7 @@ exports.up = (knex, Promise) => {
   table.foreign('user_id').references('users.id')
   table.integer('ship_id')
   table.foreign('ship_id').references('ships.id')
-  table.string('content')
+  table.string('review')
   table.decimal('rating')
   })  
 };
