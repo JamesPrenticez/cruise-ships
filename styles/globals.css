@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities; 
 
+
 @layer base {
-  .test {
-      @apply
-      h-64 
-      w-64
-      bg-green-500
+  body  {
+    @apply
+    overflow-y-scroll
+  }
+}
+
+@layer components  {
+  .rob  {
+    height: 100px;
+    width: 100px;
+    color: 'red';
   }
 }

@@ -59,15 +59,21 @@ export default function Ship() {
       :
       <>
         <Layout>
-          <h1 className='font-bold text-3xl'>{shipData?.name}</h1>
+          <h1 className='font-bold text-3xl'>{shipData?.ship_name}</h1>
           <div className='flex items-center w-full h-[250px] object-cover overflow-hidden bg-blue-900'>
-            <img className="w-full transition hover:scale-125 ease-in-out duration-1000 cursor-pointer" src="/images/default.webp" alt="user profile picture" />
+
+            {/* Image Source I will change from default.webp to each ship image as a prop {img}
+            The alt="user profile picture" needs to be different 
+            <img className="w-full transition hover:scale-125 ease-in-out duration-1000 cursor-pointer" src="images/default.webp" 
+            alt="user profile picture" />
+            The change for now, I will use src = {img} and alt = {ship_name} */}
+            <img className="w-full transition hover:scale-125 ease-in-out duration-1000 cursor-pointer" src={img} alt={ship_name} />
+          
           </div>
 
           <button 
            className='bg-green-500 text-white rounded-md w-24 h-12 mt-4'
-           onClick={() => setToggleReviews(!toggleReviews)}
-          >
+           onClick={() => setToggleReviews(!toggleReviews)}>
             Show Reviews
           </button>
 
